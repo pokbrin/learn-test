@@ -1,0 +1,20 @@
+# 工作流程名字
+name: "构建learn-test"
+# 触发工作流程事件
+#on: [push]
+on:
+  push:
+    branches:
+      - main
+# 流程子作业
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: 编译project
+    env:
+      profiles-prod: prod
+      profiles-test: test
+
+    steps:
+      - name: 检出项目
+        uses: actions/checkout@v3
