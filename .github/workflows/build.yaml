@@ -25,7 +25,10 @@ jobs:
       - name: 开始打包
         run: mvn clean package -Dmaven.test.skip=true
       - name: 检查打包后的jar文件
-        run: ls ${{github.workspace}}/target/*.jar
+        run: |
+          cd ${{github.workspace}}/target \
+          ls 
+
 
       # - name: 发布包
       #   uses: actions/upload-artifact@v3.1.1
