@@ -24,3 +24,9 @@ jobs:
         run: mvn -v
       - name: 开始打包
         run: mvn clean package -Dmaven.test.skip=true
+      - name: 发布包
+        uses: actions/upload-artifact@v3.1.1
+        with: 
+          name: demo
+          path: ${{ github.workspace }}/target/*.jar
+          if-no-files-found: error
