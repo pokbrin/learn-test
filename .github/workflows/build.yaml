@@ -23,7 +23,7 @@ jobs:
       - name: 检查maven环境
         run: mvn -v
       - name: 检查仓库名字
-        run: echo ${{ github}}
+        run: echo ${{ toJSON(github) }}
       # - name: 开始打包
       #   run: mvn clean package -Dmaven.test.skip=true
       # - name: 发布包
