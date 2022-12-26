@@ -22,11 +22,13 @@ jobs:
           java -version \
       - name: 检查maven环境
         run: mvn -v
-      - name: 开始打包
-        run: mvn clean package -Dmaven.test.skip=true
-      - name: 发布包
-        uses: actions/upload-artifact@v3.1.1
-        with: 
-          name: demo
-          path: ${{ github.workspace }}/target/*.jar
-          if-no-files-found: error
+      - name: 检查仓库名字
+        run: echo ${{ github.action_repository}}
+      # - name: 开始打包
+      #   run: mvn clean package -Dmaven.test.skip=true
+      # - name: 发布包
+      #   uses: actions/upload-artifact@v3.1.1
+      #   with: 
+      #     name: demo
+      #     path: ${{ github.workspace }}/target/*.jar
+      #     if-no-files-found: error
