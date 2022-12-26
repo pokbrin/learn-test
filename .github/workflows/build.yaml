@@ -10,15 +10,15 @@ on:
 jobs:
   java-build:
     runs-on: ubuntu-latest
-    name: 检出项目1
+    name: 编译项目
     steps:
-      - name: 检出项目2
+      - name: 检出项目
         uses: actions/checkout@v3.2.0
       - name: 查看workspace
         run: |
           ls ${{github.workspace}}
-      - name: 检查环境
+      - name: 检查java环境
         run: |
           java -version \
-          python version \
-          node -v 
+      - name: 检查maven环境
+        run: mvn -v
