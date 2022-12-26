@@ -14,6 +14,7 @@ jobs:
     steps:
       - name: 检出项目2
         uses: actions/checkout@v3.2.0
+      - name: 查看workspace
         run: |
           ls ${{github.workspace}}
       - name: 检查环境
@@ -21,4 +22,3 @@ jobs:
           java -version \
           python version \
           node -v 
-
