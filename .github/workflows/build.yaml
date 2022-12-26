@@ -27,7 +27,7 @@ jobs:
       - name: 检查打包后的jar文件
         run: |
           cd ${{github.workspace}}/target
-          ls .
+          ls *.jar
 
 
       # - name: 发布包
