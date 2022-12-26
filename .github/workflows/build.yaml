@@ -17,8 +17,8 @@ jobs:
       - name: 检出项目
         uses: actions/checkout@v3.2.0
 
-      - name: 缓存加速
-        uses: actions/cache@3.2.1
+      - name: 配置-缓存加速
+        uses: actions/cache@v3.2.1
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
