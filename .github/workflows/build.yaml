@@ -1,20 +1,24 @@
 # 工作流程名字
-name: "构建learn-test"
+name: "构建"
 # 触发工作流程事件
 #on: [push]
 on:
   push:
     branches:
-      - main
+      - master
 # 流程子作业
 jobs:
-  build:
+  java-build:
     runs-on: ubuntu-latest
-    name: 编译project
-    env:
-      profiles-prod: prod
-      profiles-test: test
-
+    name: 检出项目1
     steps:
-      - name: 检出项目
-        uses: actions/checkout@v3
+      - name: 检出项目2
+        uses: actions/checkout@v3.2.0
+        run: |
+          ls ${{github.workspace}}
+      - name: 检查环境
+        run: |
+          java -version \
+          python version \
+          node -v 
+
