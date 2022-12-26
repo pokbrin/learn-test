@@ -26,8 +26,8 @@ jobs:
         run: mvn clean package -Dmaven.test.skip=true
       - name: 检查打包后的jar文件
         run: |
-          cd ${{github.workspace}}/target \
-          ls 
+          cd ${{github.workspace}}/target
+          ls .
 
 
       # - name: 发布包
