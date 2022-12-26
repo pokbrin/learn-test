@@ -1,5 +1,5 @@
 # 工作流程名字
-name: "构建"
+name: 项目构建
 # 触发工作流程事件
 #on: [push]
 on:
@@ -10,7 +10,7 @@ on:
 jobs:
   java-build:
     runs-on: ubuntu-latest
-    name: 编译项目
+    name: 编译一个java项目
     steps:
       - name: 检出项目
         uses: actions/checkout@v3.2.0
@@ -22,3 +22,5 @@ jobs:
           java -version \
       - name: 检查maven环境
         run: mvn -v
+      - name: 开始打包
+        run: mvn clean package -Dmaven.test.skip=true
